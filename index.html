@@ -6,23 +6,25 @@
   <meta name="viewport" content="width=device-width">
   <title>HangDude</title>
   <!-- <link rel="icon" href="assets/images/favicon.png" /> -->
+  <link href="https://fonts.googleapis.com/css2?family=Labrada&display=swap" rel="stylesheet">
   <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
   <div class="main">
-    <h1 class="t1">HangDude</h1>
+    <h1 class="t1">HangDude!</h1>
     <img id="hangman_img" src="assets/images/hangman0.png">
     <br>
     <input autofocus id="letter" maxlength="1">
     <p id="playfield"></p>
     <p id="left"></p>
-    <p id="loose"></p>
-    <p id="again" onclick="refresh();">Try again?</p>
-    <p id="guess"></p>
+    <p id="end"></p>
 
-    <script src="script.js"></script>
+    <button id="again" onclick="refresh();">Try again?</button>
+
+    <p id="guess"></p>
   </div>
+  <script src="script.js"></script>
 </body>
 
 </html>

@@ -1,16 +1,26 @@
 :root {
   --main-color: #333030;
-  --secondary-color: #FFFFFF;
-  --accent-color: #194A22;
+  --secondary-color: #fff;
+  --accent-color: #c9b458;
 }
 
 * {
   padding: 0;
   margin: 0;
+  overflow: hidden
+}
+
+#main {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #hangman_img {
   filter: brightness(0) invert(1);
+  width: 20%;
+  min-width: 290px;
 }
 
 html,
@@ -19,16 +29,26 @@ body {
   width: 100vw;
   text-align: center;
   align-items: center;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Labrada", sans-serif;
+  font-size: 130%;
   background-color: var(--main-color);
   color: var(--secondary-color);
 }
 
 #again {
-  text-decoration: underline;
   font-weight: bold;
   margin-top: 50px;
   display: none;
+  padding: 25px;
+  font-size: 18px;
+  border-radius: 15px;
+  border: 2px solid var(--secondary-color);
+  color: var(--secondary-color);
+  background-color: var(--accent-color);
+}
+
+#again:hover {
+  filter: brightness(80%);
 }
 
 #left,
@@ -70,13 +90,4 @@ body {
 
 img:hover {
   cursor: pointer;
-}
-
-#main {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-
-  justify-content: center;
-  align-items: center;
 }

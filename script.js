@@ -21,6 +21,7 @@ async function start() {
 
   // PLAY GAME
   let playfield = document.querySelector("#playfield")
+  let end = document.querySelector("#end")
   playfield.innerHTML = blankArr.join(" ");
 
   let letterElem = document.querySelector("#letter")
@@ -39,10 +40,9 @@ async function start() {
           document.getElementById('hangman_img').style.display = 'none';
           document.getElementById('letter').style.display = 'none';
           // show text
-          let loose = document.querySelector("#loose");
-          loose.innerHTML = "Winner Winner Chicken Dinner!";
+          end.innerHTML = "Winner Winner Chicken Dinner!";
           // play agin text show, replace display none with block
-          document.getElementById('again').style.display = 'block';
+          document.getElementById('again').style.display = 'inline-block';
 
         }
 
@@ -78,10 +78,9 @@ async function start() {
       document.getElementById('hangman_img').style.display = 'none';
       document.getElementById('letter').style.display = 'none';
       // show text
-      let loose = document.querySelector("#loose");
-      loose.innerHTML = "You lost! The word was.. " + secret;
+      end.innerHTML = "You lost! The word was.. " + secret;
       // play agin text show, replace display none with block
-      document.getElementById('again').style.display = 'block';
+      document.getElementById('again').style.display = 'inline-block';
     }
 
   })
@@ -112,4 +111,3 @@ start()
 function refresh() {
   location.reload();
 }
-// ha
