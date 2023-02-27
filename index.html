@@ -1,30 +1,55 @@
+<!-- declaring that this document is html -->
 <!DOCTYPE html>
+<!-- start html -->
 <html>
+<!-- head of html.. where you link stylesheets, icons, titles, meta, etc -->
 
 <head>
+  <!-- defining meta standards -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
+  <!-- title of page, displayed in tab -->
   <title>HangDude</title>
-  <!-- <link rel="icon" href="assets/images/favicon.png" /> -->
+  <!-- set favicon of page. also known as tab icon -->
+  <link rel="icon" href="assets/images/favicon.png" />
+  <!-- when you add a font, it's important that display swap is used, along with refrencing it as a stylesheet-->
   <link href="https://fonts.googleapis.com/css2?family=Labrada&display=swap" rel="stylesheet">
-  <link href="style.css" rel="stylesheet" type="text/css" />
+  <!-- calling our linked stylesheet-->
+  <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+  <!-- end head tag-->
 </head>
+<!-- start our body tag ... where we add our content -->
 
 <body>
+  <!-- add a div wrapping it in a "main" class, allowing styles for all elements inside this div-->
   <div class="main">
-    <h1 class="t1">HangDude!</h1>
+    <!-- our custom made. "HangDude" logo -->
+    <img class="t1" src="assets/images/logo.png">
+    <!-- line breaks -->
+    <br><br>
+    <!-- hangman image. this src replaces with js after an incorrect letter is guessed -->
     <img id="hangman_img" src="assets/images/hangman0.png">
+    <!-- line break -->
     <br>
+    <!-- adding our input, giving it an id for styling and js, giving it an "autofocus" so when the page is loaded, you can type it in without clicking on it. adding a max length of one so not more than 1 letter can be added in this input -->
     <input autofocus id="letter" maxlength="1">
+    <!-- showing the "playfield" ... using js, it shows the correct words guessed -->
     <p id="playfield"></p>
+    <!-- how many guesses do you have left until game over.. counts down using js -->
     <p id="left"></p>
+    <!-- end game messages. with js, it output texts that either says you won or lost. -->
     <p id="end"></p>
-
+    <!-- allowing the user to play again, refreshs the page to get a new letter, displayed AFTER the game is ended .. has an onclick function that uses javascript to reload page. -->
     <button id="again" onclick="refresh();">Try again?</button>
-
+    <!-- shows your guesses... does NOT include repeated guesses.. puts it in an "array" -->
     <p id="guess"></p>
+    <!-- refresh button, shown for the entire game, top right corner. Allows the user to void a game at anytime, start over. uses onclick function with js to reload the page -->
+    <img class="refresh" src="assets/images/refresh.png" onclick="refresh();">
+    <!-- copyright message. &copy shows a nice (c) symbol! Can u-->
+    <p class="copy">&copy; <span id="yr"></span> Riley Jones. All Rights Reserved.</p>
   </div>
-  <script src="script.js"></script>
+  <!-- calling our javascript file, to let the game work, of course! this should always be before the closing body tag -->
+  <script src="assets/js/script.js"></script>
 </body>
 
 </html>

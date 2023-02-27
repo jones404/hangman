@@ -1,9 +1,3 @@
-// Make empty array
-// Fill an array based on another array
-// Check if an array contains an item
-// Get an item from an array
-// Combine items in an array
-// Get a random word from an array
 async function start() {
 
   // SETUP
@@ -28,6 +22,13 @@ async function start() {
   letterElem.addEventListener('keydown', (event) => {
     if (event.key == "Enter") {
       if (secretArr.includes(letterElem.value)) {
+        if (guesses.includes(letterElem.value)) {
+          console.log("already guessed");
+        } else {
+          guesses.push(letterElem.value);
+          let guessEl = document.querySelector("#guess")
+          guessEl.innerHTML = "Guesses: " + guesses.join(", ");
+        }
         for (let i = 0; i < secretArr.length; i++) {
           if (secretArr[i] == letterElem.value) {
             blankArr[i] = secretArr[i]
@@ -39,9 +40,10 @@ async function start() {
           document.getElementById('left').style.display = 'none';
           document.getElementById('hangman_img').style.display = 'none';
           document.getElementById('letter').style.display = 'none';
+          document.getElementById('guess').style.display = 'none';
           // show text
-          end.innerHTML = "Winner Winner Chicken Dinner!";
-          // play agin text show, replace display none with block
+          end.innerHTML = "Congratulations, you won!";
+          // play agin text show, replace display none with INLINE (to keep centered) block
           document.getElementById('again').style.display = 'inline-block';
 
         }
@@ -77,9 +79,10 @@ async function start() {
       document.getElementById('left').style.display = 'none';
       document.getElementById('hangman_img').style.display = 'none';
       document.getElementById('letter').style.display = 'none';
+      document.getElementById('guess').style.display = 'none';
       // show text
       end.innerHTML = "You lost! The word was.. " + secret;
-      // play agin text show, replace display none with block
+      // play agin text show, replace display none with INLINE (to keep centered) block
       document.getElementById('again').style.display = 'inline-block';
     }
 
@@ -111,3 +114,6 @@ start()
 function refresh() {
   location.reload();
 }
+
+// Get current year 
+document.getElementById("yr").innerHTML = (new Date().getFullYear());
