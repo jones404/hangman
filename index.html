@@ -11,7 +11,7 @@
   <!-- title of page, displayed in tab -->
   <title>HangDude</title>
   <!-- set favicon of page. also known as tab icon -->
-  <!--  <link rel="icon" href="assets/images/favicon.png" /> -->
+  <link rel="icon" href="favicon.ico" />
   <!-- when you add a font, it's important that display swap is used, along with refrencing it as a stylesheet-->
   <link href="https://fonts.googleapis.com/css2?family=Labrada&display=swap" rel="stylesheet">
   <!-- calling our linked stylesheet-->
@@ -45,8 +45,12 @@
     <p id="guess"></p>
     <!-- refresh button, shown for the entire game, top right corner. Allows the user to void a game at anytime, start over. uses onclick function with js to reload the page -->
     <img class="refresh" src="assets/images/refresh.png" onclick="refresh();">
-    <p id="streak"></p>
-    <!-- copyright message. &copy shows a nice (c) symbol! Can u-->
+    <div class="scores">
+      <span id="streak"></span>
+      ⊛
+      <span id="hs"></span>
+    </div>
+    <!-- copyright message. &copy shows a nice (c) symbol! gets current year with js -->
     <p class="copy">&copy; <span id="yr"></span> Riley Jones. All Rights Reserved.</p>
   </div>
   <!-- calling our javascript file, to let the game work, of course! this should always be before the closing body tag -->
